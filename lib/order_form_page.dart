@@ -1,5 +1,3 @@
-// lib/order_form_page.dart
-
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
