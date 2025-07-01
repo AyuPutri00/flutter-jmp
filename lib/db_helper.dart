@@ -100,6 +100,18 @@ class DatabaseHelper {
     );
   }
 
+  // Fungsi untuk UPDATE data roti
+  static Future<void> updateRoti(Map<String, dynamic> roti) async {
+    final db = await getDb();
+    await db.update('roti', roti, where: 'id = ?', whereArgs: [roti['id']]);
+  }
+
+  // Fungsi untuk DELETE data roti
+  static Future<void> deleteRoti(int id) async {
+    final db = await getDb();
+    await db.delete('roti', where: 'id = ?', whereArgs: [id]);
+  }
+
   static Future<Database> getDb() async {
     _database ??= await initDb();
     return _database!;
